@@ -1,0 +1,42 @@
+/* style.css */
+
+/* Custom styles can be added here, overriding or extending Tailwind's utility classes. */
+/* For example, if you want to define a specific font size or color not easily achievable with Tailwind */
+
+/* Example: Custom button style */
+.btn-primary {
+    /* This class is no longer explicitly used with new button styling */
+    @apply bg-gray-900 text-white px-8 py-3 rounded-full font-semibold hover:bg-gray-700 transition duration-300;
+}
+
+/* Ensure images fill their containers and maintain aspect ratio */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Remove extra space below images */
+}
+
+/* Table specific styles for better readability and aesthetics in dark mode */
+.size-table th, .size-table td {
+    padding: 0.75rem; /* Increased padding */
+    border: 1px solid #525252; /* Darker gray border (zinc-600) */
+    text-align: center;
+}
+.size-table thead th {
+    background-color: #27272a; /* zinc-800 */
+    color: #ffffff; /* White text for header */
+    font-weight: 600; /* Semi-bold */
+}
+.size-table tbody tr:nth-child(even) {
+    background-color: #3f3f46; /* zinc-700 */
+}
+.size-table tbody tr:hover {
+    background-color: #525252; /* zinc-600 */
+}
+
+/* Style for active navigation links */
+.active-nav-link {
+    color: #f97316; /* orange-500 */
+    font-weight: 600; /* semi-bold */
+    text-decoration: underline;
+}
