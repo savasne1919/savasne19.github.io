@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商品一覧 - スタイリッシュなスポーツウェアブランド</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #18181b; /* zinc-900 */
+            color: #f3f4f6; /* gray-100 */
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .product-card {
+            background-color: #27272a; /* zinc-800 */
+            border-radius: 0.5rem; /* rounded-lg */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* shadow-md */
+            transition: transform 0.3s ease-in-out;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        /* Active navigation link style */
+        .active-nav-link {
+            color: #f97316; /* orange-500 */
+            font-weight: 600; /* semi-bold */
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body class="bg-zinc-900 text-gray-100">
+
+    <!-- Header Section -->
+    <header class="absolute top-0 left-0 w-full z-10 p-4 bg-gray-900 bg-opacity-70">
+        <nav class="flex justify-between items-center max-w-7xl mx-auto">
+            <!-- BRAND LOGO link to homepage -->
+            <a href="index.html" class="text-white text-lg font-bold hover:opacity-80 transition-opacity duration-300">
+                <img src="IMG_3094-2.png" alt="BRAND LOGO" class="h-12 w-auto">
+            </a>
+            <div class="hidden md:flex space-x-6 text-white text-sm">
+                <!-- Product Page Link -->
+                <a href="all-product.html" class="hover:underline active-nav-link">Product</a>
+                <!-- Order Page Link -->
+                <a href="how-to-order.html" class="hover:underline">How to order</a>
+                <!-- Size Chart Page Link -->
+                <a href="size-chart.html" class="hover:underline">Size Chart</a>
+                <!-- My Logo Page Link -->
+                <a href="logo-creation.html" class="hover:underline">My logo</a>
+                <!-- Collection Page Link -->
+                <a href="gallery.html" class="hover:underline">Collection</a>
+                <!-- Contact Section Link (on this page) -->
+                <a href="index.html#line-qr-code" class="hover:underline contact-link">Contact</a>
+            </div>
+            <div class="hidden md:flex space-x-4 text-white">
+                <!-- SEARCH and CART removed -->
+            </div>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-4 6h4"></path></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-900 bg-opacity-90 text-white mt-4 p-4 rounded-lg">
+            <a href="all-product.html" class="block py-2 hover:bg-gray-700 rounded">Product</a>
+            <a href="how-to-order.html" class="block py-2 hover:bg-gray-700 rounded">How to order</a>
+            <a href="size-chart.html" class="block py-2 hover:bg-gray-700 rounded">Size Chart</a>
+            <a href="logo-creation.html" class="block py-2 hover:bg-gray-700 rounded">My logo</a>
+            <a href="gallery.html" class="block py-2 hover:bg-gray-700 rounded">Collection</a>
+            <a href="index.html#line-qr-code" class="block py-2 hover:bg-gray-700 rounded contact-link">Contact</a>
+            <hr class="my-2 border-gray-700">
+            <!-- SEARCH and CART removed -->
+        </div>
+    </header>
+
+    <main class="pt-24 pb-16">
+        <section id="top" class="max-w-7xl mx-auto px-4 py-8">
+            <h1 class="text-4xl md:text-5xl font-bold text-center mb-12 text-orange-500">Product</h1>
+            <p class="text-lg text-center text-gray-300 mb-12">
+                お客様のニーズに合わせたカスタムスポーツウェアを幅広く取り揃えています。<br>
+                高品質な素材とデザインで、最高のパフォーマンスをサポートします。
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <!-- Product Item: ユニフォーム -->
+                <div class="product-card p-4 text-center">
+                    <a href="uniform-detail.html">
+                        <img src="IMG_2978.PNG" alt="ユニフォーム" class="w-full h-auto object-contain rounded-md mb-2 mx-auto">
+                    </a>
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-100">ユニフォーム</h3>
+                        <p class="text-orange-400 text-2xl font-bold mb-4">¥7,000</p>
+                        <p class="text-gray-300 text-sm mb-4">
+                            3種類の生地から選べ、シャツは肩周りのカット、パンツは裾幅にこだわったユニフォーム。
+                        </p>
+                        <a href="uniform-detail.html" class="bg-blue-500 text-white px-6 py-2 rounded-full font-semibold hover:bg-blue-600 transition duration-300 inline-block">
+                            詳細を見る
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product Item: リバーシブルセット -->
+                <div class="product-card p-4 text-center">
+                    <a href="reversible-detail.html">
+                        <img src="IMG_2977.PNG" alt="リバーシブル" class="w-full h-auto object-contain rounded-md mb-2 mx-auto">
+                    </a>
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-100">リバーシブル</h3>
+                        <p class="text-orange-400 text-2xl font-bold mb-4">¥7,500</p>
+                        <p class="text-gray-300 text-sm mb-4">
+                            1着で2つのデザインが楽しめるリバーシブルウェア。
+                        </p>
+                        <a href="reversible-detail.html" class="bg-blue-500 text-white px-6 py-2 rounded-full font-semibold hover:bg-blue-600 transition duration-300 inline-block">
+                            詳細を見る
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product Item: ラウンドリバーシブル -->
+                <div class="product-card p-4 text-center">
+                    <a href="round-reversible-detail.html">
+                        <img src="IMG_2977.PNG" alt="ラウンドリバーシブル" class="w-full h-auto object-contain rounded-md mb-2 mx-auto">
+                    </a>
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-100">ラウンドリバーシブル</h3>
+                        <p class="text-orange-400 text-2xl font-bold mb-4">¥7,500</p>
+                        <p class="text-gray-300 text-sm mb-4">
+                            裾がラウンドカットになっており、見た目が非常にスタイリッシュなリバーシブルウェア。
+                        </p>
+                        <a href="round-reversible-detail.html" class="bg-blue-500 text-white px-6 py-2 rounded-full font-semibold hover:bg-blue-600 transition duration-300 inline-block">
+                            詳細を見る
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product Item: Tシャツ -->
+                <div class="product-card p-4 text-center">
+                    <a href="tshirt-detail.html">
+                        <img src="IMG_2976.PNG" alt="Tシャツ" class="w-full h-auto object-contain rounded-md mb-2 mx-auto">
+                    </a>
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-100">Tシャツ</h3>
+                        <p class="text-orange-400 text-2xl font-bold mb-4">¥3,500</p>
+                        <p class="text-gray-300 text-sm mb-4">
+                            400色の中からカラーを選べ、デザインも自由なTシャツ。
+                        </p>
+                        <a href="tshirt-detail.html" class="bg-blue-500 text-white px-6 py-2 rounded-full font-semibold hover:bg-blue-600 transition duration-300 inline-block">
+                            詳細を見る
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product Item: ロングTシャツ -->
+                <div class="product-card p-4 text-center">
+                    <a href="sublimation-long-tshirt-detail.html">
+                        <img src="IMG_2968.PNG" alt="ロングTシャツ" class="w-full h-auto object-contain rounded-md mb-2 mx-auto">
+                    </a>
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-100">ロングTシャツ</h3>
+                        <p class="text-orange-400 text-2xl font-bold mb-4">¥4,000</p>
+                        <p class="text-gray-300 text-sm mb-4">
+                            リブ付きでプレイしやすいロングTシャツ。
+                        </p>
+                        <a href="sublimation-long-tshirt-detail.html" class="bg-blue-500 text-white px-6 py-2 rounded-full font-semibold hover:bg-blue-600 transition duration-300 inline-block">
+                            詳細を見る
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product Item: タンクトップ -->
+                <div class="product-card p-4 text-center">
+                    <a href="sublimation-tanktop-detail.html">
+                        <img src="IMG_2969.PNG" alt="タンクトップ" class="w-full h-auto object-contain rounded-md mb-2 mx-auto">
+                    </a>
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-100">タンクトップ</h3>
+                        <p class="text-orange-400 text-2xl font-bold mb-4">¥3,300</p>
+                        <p class="text-gray-300 text-sm mb-4">
+                            ラウンドカットでオシャレさもあるタンクトップ。
+                        </p>
+                        <a href="sublimation-tanktop-detail.html" class="bg-blue-500 text-white px-6 py-2 rounded-full font-semibold hover:bg-blue-600 transition duration-300 inline-block">
+                            詳細を見る
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product Item: ベンチコート -->
+                <div class="product-card p-4 text-center">
+                    <a href="bench-coat-detail.html">
+                        <img src="IMG_3083.PNG" alt="ベンチコート" class="w-full h-auto object-contain rounded-md mb-2 mx-auto">
+                    </a>
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-100">ベンチコート</h3>
+                        <p class="text-orange-400 text-2xl font-bold mb-4">¥15,000</p>
+                        <p class="text-gray-300 text-sm mb-4">
+                            寒い季節に最適な、保温性に優れたベンチコート。
+                        </p>
+                        <a href="bench-coat-detail.html" class="bg-blue-500 text-white px-6 py-2 rounded-full font-semibold hover:bg-blue-600 transition duration-300 inline-block">
+                            詳細を見る
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product Item: チームソックス -->
+                <div class="product-card p-4 text-center">
+                    <a href="team-socks-detail.html">
+                        <img src="https://placehold.co/600x400/3f3f46/f3f4f6?text=Team+Socks" alt="チームソックス" class="w-full h-auto object-contain rounded-md mb-2 mx-auto">
+                    </a>
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-100">チームソックス</h3>
+                        <p class="text-orange-400 text-2xl font-bold mb-4">
+                            プリント: ¥1,500<br>刺しゅう: ¥1,800
+                        </p>
+                        <p class="text-gray-300 text-sm mb-4">
+                            チームのユニフォームに合わせたオリジナルデザインのチームソックス。
+                            サイズ: 25〜29
+                        </p>
+                        <a href="team-socks-detail.html" class="bg-blue-500 text-white px-6 py-2 rounded-full font-semibold hover:bg-blue-600 transition duration-300 inline-block">
+                            詳細を見る
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <h4 class="font-bold text-lg mb-4">BRAND NAME</h4>
+                <p class="text-sm text-gray-400">
+                    Performance apparel designed for the modern athlete.
+                    <br>
+                    &copy; 2025 Brand Name. All rights reserved.
+                </p>
+            </div>
+            <div>
+                <h4 class="font-bold text-lg mb-4">SHOP</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="text-gray-400 hover:text-white">Men's</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Women's</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">New Arrivals</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Sale</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-lg mb-4">ABOUT</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="text-gray-400 hover:text-white">Our Story</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Careers</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Sustainability</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-lg mb-4">SUPPORT</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="text-gray-400 hover:text-white">FAQ</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Shipping & Returns</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Size Guide</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
