@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>スタイリッシュなスポーツウェアブランド</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            /* ダークテーマの背景色と文字色 */
+            background-color: #18181b; /* zinc-900 */
+            color: #f3f4f6; /* gray-100 */
+        }
+        /* スムーズスクロールを追加 */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Product card specific styles for consistency */
+        .product-card-preview {
+            background-color: #18181b; /* zinc-900 (黒) */
+            border-radius: 0.5rem; /* rounded-lg */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* shadow-md */
+            transition: transform 0.3s ease-in-out;
+        }
+        .product-card-preview:hover {
+            transform: translateY(-5px);
+        }
+        /* Feature card specific styles */
+        .feature-card {
+            background-color: #27272a; /* zinc-800 */
+            border-radius: 0.5rem; /* rounded-lg */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* shadow-md */
+            padding: 1.5rem;
+            text-align: left;
+            transition: transform 0.3s ease-in-out;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        .feature-icon {
+            color: #f97316; /* orange-500 */
+            /* アイコンのサイズを小さく調整 */
+            font-size: 1.5rem; /* text-2xl */
+            margin-bottom: 1rem;
+            /* SVGのviewBoxに合わせてサイズを調整 */
+            width: 48px; /* 適切なサイズに調整 */
+            height: 48px; /* 適切なサイズに調整 */
+        }
+        /* 画像アイコン用のスタイル (このSVGは直接描画されるため不要ですが、既存のクラスは残します) */
+        .feature-image-icon {
+            width: 1.5rem; /* アイコンのサイズに合わせる */
+            height: 1.5rem; /* アイコンのサイズに合わせる */
+            margin: 0 auto 1rem auto; /* 中央寄せと下マージン */
+        }
+        .logo-svg {
+            height: 2rem; /* h-8 に相当 */
+            width: auto;
+        }
+        /* Active navigation link style */
+        .active-nav-link {
+            color: #f97316; /* orange-500 */
+            font-weight: 600; /* semi-bold */
+            text-decoration: underline;
+        }
+        .gallery-background {
+            background-image: url('5A4F8081-302C-4E69-ACF4-77E14A8848DF.JPG'), url('7289983B-F9F1-40FF-8C10-C4E86030D5B4 2.JPG');
+            background-size: 50% auto, 50% auto; /* 2枚の画像を横に並べる */
+            background-repeat: no-repeat, no-repeat;
+            background-position: left top, right center; /* 左の画像を上揃え、右の画像は中央に配置 */
+        }
+    </style>
+</head>
+<body class="bg-zinc-900 text-gray-100">
+
+    <!-- Header Section -->
+    <header class="absolute top-0 left-0 w-full z-10 p-4 bg-gray-900 bg-opacity-70">
+        <nav class="flex justify-between items-center max-w-7xl mx-auto">
+            <!-- BRAND LOGO link to homepage -->
+            <a href="index.html" class="text-white text-lg font-bold hover:opacity-80 transition-opacity duration-300">
+                <img src="IMG_3094-2.png" alt="BRAND LOGO" class="h-12 w-auto">
+            </a>
+            <div class="hidden md:flex space-x-6 text-white text-sm">
+                <!-- Product Page Link -->
+                <a href="all-product.html" class="hover:underline">Product</a>
+                <!-- Order Page Link -->
+                <a href="how-to-order.html" class="hover:underline">How to order</a>
+                <!-- Size Chart Page Link -->
+                <a href="size-chart.html" class="hover:underline">Size Chart</a>
+                <!-- My Logo Page Link -->
+                <a href="logo-creation.html" class="hover:underline">My logo</a>
+                <!-- Collection Page Link -->
+                <a href="gallery.html" class="hover:underline">Collection</a>
+                <!-- Contact Section Link (on this page) -->
+                <a href="index.html#line-qr-code" class="hover:underline contact-link">Contact</a>
+            </div>
+            <div class="hidden md:flex space-x-4 text-white">
+                <!-- SEARCH and CART removed -->
+            </div>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-4 6h4"></path></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-900 bg-opacity-90 text-white mt-4 p-4 rounded-lg">
+            <a href="all-product.html" class="block py-2 hover:bg-gray-700 rounded">Product</a>
+            <a href="how-to-order.html" class="block py-2 hover:bg-gray-700 rounded">How to order</a>
+            <a href="size-chart.html" class="block py-2 hover:bg-gray-700 rounded">Size Chart</a>
+            <a href="logo-creation.html" class="block py-2 hover:bg-gray-700 rounded">My logo</a>
+            <a href="gallery.html" class="block py-2 hover:bg-gray-700 rounded">Collection</a>
+            <a href="index.html#line-qr-code" class="block py-2 hover:bg-gray-700 rounded contact-link">Contact</a>
+            <hr class="my-2 border-gray-700">
+            <!-- SEARCH and CART removed -->
+        </div>
+    </header>
+
+    <!-- Hero Section - Changed to Product List Overview -->
+    <section class="relative w-full h-96 bg-cover bg-center" style="background-image: url('IMG_1954.jpg');">
+        <div class="absolute inset-0 bg-black opacity-40"></div>
+        <div class="relative z-10 flex flex-col items-center justify-center h-full text-white text-center p-4">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">Product</h1>
+            <p class="text-lg md:text-xl mb-8">最新のカスタムスポーツウェアを豊富に取り揃えています。</p>
+            <a href="all-product.html" class="bg-blue-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-600 transition duration-300 inline-block">
+                すべて見る
+            </a>
+        </div>
+    </section>
+
+    <!-- Product Preview Section (PICK UP ITEM) -->
+    <section class="py-8 bg-zinc-900"> <!-- 背景色を黒に変更, py-16をpy-10に変更 -->
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-orange-500">PICK UP ITEM</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Product Item: ユニフォーム -->
+                <div class="product-card-preview p-4 text-center"> <!-- p-6をp-4に変更 -->
+                    <a href="uniform-detail.html"> <!-- 画像をアクティブにするためのリンク -->
+                        <img src="IMG_2978.PNG" alt="ユニフォーム" class="w-full h-auto object-contain rounded-md mb-2 mx-auto">
+                    </a>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-100">ユニフォーム</h3>
+                    <p class="text-orange-400 text-2xl font-bold mb-4">¥7,000</p>
+                    <p class="text-gray-300 text-sm mb-4">
+                        3種類の生地から選べ、シャツは肩周りのカット、パンツは裾幅にこだわったユニフォーム。
+                    </p>
+                    <a href="uniform-detail.html" class="bg-blue-500 text-white px-6 py-2 rounded-full font-semibold hover:bg-blue-600 transition duration-300 inline-block">
+                        詳細を見る
+                    </a>
+                </div>
+
+                <!-- Product Item: リバーシブルセット -->
+                <div class="product-card-preview p-4 text-center"> <!-- p-6をp-4に変更 -->
+                    <a href="reversible-detail.html"> <!-- 画像をアクティブにするためのリンク -->
+                        <img src="IMG_2977.PNG" alt="リバーシブル" class="w-full h-auto object-contain rounded-md mb-2 mx-auto">
+                    </a>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-100">リバーシブル</h3>
+                    <p class="text-gray-300 text-sm mb-4">
+                        1着で2つのデザインが楽しめるリバーシブルウェア。
+                    </p>
+                    <a href="reversible-detail.html" class="bg-blue-500 text-white px-6 py-2 rounded-full font-semibold hover:bg-blue-600 transition duration-300 inline-block">
+                        詳細を見る
+                    </a>
+                </div>
+
+                <!-- Product Item: Tシャツ -->
+                <div class="product-card-preview p-4 text-center"> <!-- p-6をp-4に変更 -->
+                    <a href="tshirt-detail.html"> <!-- 画像をアクティブにするためのリンク -->
+                        <img src="IMG_2976.PNG" alt="Tシャツ" class="w-full h-auto object-contain rounded-md mb-2 mx-auto">
+                    </a>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-100">Tシャツ</h3>
+                    <p class="text-orange-400 text-2xl font-bold mb-4">¥3,500</p>
+                    <p class="text-gray-300 text-sm mb-4">
+                        400色の中からカラーを選べ、デザインも自由なTシャツ。
+                    </p>
+                    <a href="tshirt-detail.html" class="bg-blue-500 text-white px-6 py-2 rounded-full font-semibold hover:bg-blue-600 transition duration-300 inline-block">
+                        詳細を見る
+                    </a>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="all-product.html" class="bg-orange-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-orange-600 transition duration-300 inline-block">
+                    すべての商品を見る
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW TO ORDER and Size Chart Section -->
+    <section class="py-16 bg-zinc-900">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row gap-8">
+            <!-- HOW TO ORDER Section -->
+            <div id="how-to-order" class="relative w-full md:w-1/2 py-20 bg-cover bg-center rounded-lg overflow-hidden" style="background-image: url('Gemini_Generated_Image_cmo0yjcmo0yjcmo0.png'); background-size: contain; background-repeat: no-repeat; background-position: center;">
+                <div class="absolute inset-0 bg-black opacity-40"></div>
+                <div class="relative z-10 max-w-xl mx-auto px-4 text-center">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-4 text-orange-500">HOW TO ORDER</h2>
+                    <p class="text-lg md:text-xl mb-8">カスタムスポーツウェアの注文方法についてご案内します。</p>
+                    <a href="how-to-order.html" class="bg-orange-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-orange-600 transition duration-300 inline-block">
+                        注文方法を見る
+                    </a>
+                </div>
+            </div>
+
+            <!-- Size Chart Section -->
+            <div id="size-chart-section" class="relative w-full md:w-1/2 py-20 bg-cover bg-center rounded-lg overflow-hidden" style="background-image: url('Gemini_Generated_Image_fppkp7fppkp7fppk.png'); background-size: contain; background-repeat: no-repeat; background-position: center;">
+                <div class="absolute inset-0 bg-black opacity-40"></div>
+                <div class="relative z-10 max-w-xl mx-auto px-4 text-center">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-4 text-orange-500">Size Chart</h2>
+                    <p class="text-lg md:text-xl mb-8">
+                        最適なサイズを見つけるための詳細なサイズ表はこちら。
+                    </p>
+                    <a href="size-chart.html" class="bg-orange-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-orange-600 transition duration-300 inline-block">
+                        詳細を見る
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- My Logo Design and Gallery Section -->
+    <section class="py-16 bg-zinc-900">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row gap-8">
+            <!-- My Logo Design Section -->
+            <div id="logo-creation" class="relative w-full md:w-1/2 py-20 bg-cover bg-center rounded-lg overflow-hidden" style="background-image: url('15296fbc6040d5d72f9ca1dc622e7984.JPG'); background-size: cover; background-repeat: no-repeat; background-position: center;">
+                <div class="absolute inset-0 bg-black opacity-50"></div>
+                <div class="relative z-10 max-w-4xl mx-auto px-4 text-center">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-4 text-orange-500">My Logo Design</h2>
+                    <p class="text-lg md:text-xl mb-8">
+                        お客様だけのオリジナルロゴマークをプロのデザイナーが無料で作成します。
+                    </p>
+                    <a href="logo-creation.html" class="bg-orange-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-orange-600 transition duration-300 inline-block">
+                        詳細を見る
+                    </a>
+                </div>
+            </div>
+
+            <!-- Gallery Section -->
+            <div id="gallery-section" class="relative w-full md:w-1/2 py-20 bg-cover bg-center rounded-lg overflow-hidden" style="background-image: url('5A4F8081-302C-4E69-ACF4-77E14A8848DF.JPG'), url('7289983B-F9F1-40FF-8C10-C4E86030D5B4 2.JPG'); background-size: 50% auto, 50% auto; background-repeat: no-repeat, no-repeat; background-position: left top, right center;">
+                <div class="absolute inset-0 bg-black opacity-50"></div>
+                <div class="relative z-10 max-w-4xl mx-auto px-4 text-center">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-4 text-orange-500">Collection</h2>
+                    <p class="text-lg md:text-xl mb-8">
+                        これまでに作成したカスタムウェアのギャラリーをご覧ください。
+                    </p>
+                    <a href="gallery.html" class="bg-orange-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-orange-600 transition duration-300 inline-block">
+                        ギャラリーを見る
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Features Section (WHAT SAVAGE BASKETBALL) -->
+    <section class="py-16 bg-zinc-900"> <!-- 背景色を黒に変更 -->
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-orange-500">WHAT SAVAGE BASKETBALL</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1: 他社にはない価格競争力 -->
+                <div class="feature-card">
+                    <svg class="feature-icon mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 17l-4-4m0 4l4-4"></path>
+                    </svg>
+                    <h3 class="feature-title text-orange-500 text-xl font-bold">コスパ最強！</h3>
+                    <p class="feature-description">
+                        業界最安値級の価格で、高品質なカスタムウェアを提供します。
+                        コストパフォーマンスに優れた選択肢です。
+                    </p>
+                </div>
+
+                <!-- Feature 2: デザイン料が完全無料 -->
+                <div class="feature-card">
+                    <svg class="feature-icon mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+                    <h3 class="feature-title text-orange-500 text-xl font-bold">デザイン料が完全無料</h3>
+                    <p class="feature-description">
+                        プロのデザイナーによるオリジナルデザイン作成が料金に含まれています。
+                        修正回数の制限もありません。
+                    </p>
+                </div>
+
+                <!-- Feature 3: 昇華プリントで高品質 -->
+                <div class="feature-card">
+                    <svg class="feature-icon mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                    <h3 class="feature-title text-orange-500 text-xl font-bold">昇華プリントで高品質</h3>
+                    <p class="feature-description">
+                        最新の昇華プリント技術により、色鮮やかで耐久性に優れたプリントを実現。
+                        洗濯による色落ちも最小限に抑えます。
+                    </p>
+                </div>
+
+                <!-- Feature 4: 追加料金は一切なし -->
+                <div class="feature-card">
+                    <img src="coin_17453635.png" alt="コインアイコン" class="feature-image-icon mx-auto" style="width: 48px; height: 48px; object-fit: contain;">
+                    <h3 class="feature-title text-orange-500 text-xl font-bold">追加料金は一切なし</h3>
+                    <p class="feature-description">
+                        複雑なデザインや多色使い、背番号・ネーム追加でも追加料金は発生しません。
+                        見積もり後の不安な追加請求もありません。
+                    </p>
+                </div>
+
+                <!-- Feature 5: プレイヤーファーストの機能性設計 -->
+                <div class="feature-card">
+                    <svg class="feature-icon mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                    <h3 class="feature-title text-orange-500 text-xl font-bold">プレイヤーファーストの機能性設計</h3>
+                    <p class="feature-description">
+                        肩周りのカットで動きやすく、スリット入りのワイドパンツでプレイの邪魔になりません。
+                        実際のプレイを考慮した機能性重視の設計です。
+                    </p>
+                </div>
+
+                <!-- Feature 6: JBA規定に準拠したデザイン対応 -->
+                <div class="feature-card">
+                    <svg class="feature-icon mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.007 12.007 0 002 12c0 2.755 1.05 5.49 2.927 7.507l.008.008L12 22l7.065-2.495.008-.008A12.007 12.007 0 0022 12c0-2.755-1.05-5.49-2.927-7.507z"></path></svg>
+                    <h3 class="feature-title text-orange-500 text-xl font-bold">JBA規定をクリア！</h3>
+                    <p class="feature-description">
+                        日本バスケットボール協会（JBA）の規定に沿ったユニフォームデザインの作成も可能です。
+                        公式試合での使用をお考えの場合もご相談ください。
+                    </p>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="all-product.html" class="bg-orange-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-orange-600 transition duration-300 inline-block">
+                    すべての商品を見る
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- LINE Official Account QR Code Section -->
+    <section id="line-qr-code" class="py-16 bg-zinc-900">
+        <div class="max-w-3xl mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-orange-500">Contact</h2>
+            <h2 class="text-3xl font-bold mb-4 text-gray-100">LINE公式アカウント</h2>
+            <p class="text-gray-300 mb-8">お友達追加で最新情報や限定クーポンをゲット！</p>
+            <div class="flex justify-center items-center">
+                <img src="line_oa_chat_250709_143710_group_0.png" alt="LINE公式アカウントQRコード" class="w-48 h-48 rounded-lg mb-4 shadow-md">
+            </div>
+            <p class="text-gray-400 text-sm mt-4">上記のQRコードをLINEアプリで読み込んでください。</p>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <h4 class="font-bold text-lg mb-4">BRAND NAME</h4>
+                <p class="text-sm text-gray-400">
+                    Performance apparel designed for the modern athlete.
+                    <br>
+                    &copy; 2025 Brand Name. All rights reserved.
+                </p>
+            </div>
+            <div>
+                <h4 class="font-bold text-lg mb-4">SHOP</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="text-gray-400 hover:text-white">Men's</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Women's</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">New Arrivals</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Sale</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-lg mb-4">ABOUT</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="text-gray-400 hover:text-white">Our Story</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Careers</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Sustainability</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-lg mb-4">SUPPORT</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="text-gray-400 hover:text-white">FAQ</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Shipping & Returns</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Size Guide</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
