@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ロゴ作成サービス - スタイリッシュなスポーツウェアブランド</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #18181b; /* zinc-900 */
+            color: #f3f4f6; /* gray-100 */
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .plan-card {
+            background-color: #27272a; /* zinc-800 */
+            border-radius: 0.5rem; /* rounded-lg */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* shadow-md */
+            transition: transform 0.3s ease-in-out;
+            padding: 1.5rem; /* Adjust padding for better look */
+            display: flex; /* Use flexbox for internal layout */
+            flex-direction: column; /* Stack content vertically */
+            align-items: center; /* Center items horizontally */
+            text-align: center; /* Center text */
+        }
+        .plan-card:hover {
+            transform: translateY(-5px);
+        }
+        .plan-icon {
+            color: #f97316; /* orange-500 */
+            font-size: 3rem; /* text-5xl */
+            margin-bottom: 1rem;
+        }
+        /* Active navigation link style */
+        .active-nav-link {
+            color: #f97316; /* orange-500 */
+            font-weight: 600; /* semi-bold */
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body class="bg-zinc-900 text-gray-100">
+
+    <!-- Header Section -->
+    <header class="absolute top-0 left-0 w-full z-10 p-4 bg-gray-900 bg-opacity-70">
+        <nav class="flex justify-between items-center max-w-7xl mx-auto">
+            <!-- BRAND LOGO link to homepage -->
+            <a href="index.html" class="text-white text-lg font-bold hover:opacity-80 transition-opacity duration-300">
+                <img src="IMG_3094-2.png" alt="BRAND LOGO" class="h-12 w-auto">
+            </a>
+            <div class="hidden md:flex space-x-6 text-white text-sm">
+                <a href="all-product.html" class="hover:underline">Product</a>
+                <a href="how-to-order.html" class="hover:underline">How to order</a>
+                <a href="size-chart.html" class="hover:underline">Size Chart</a>
+                <a href="logo-creation.html" class="hover:underline active-nav-link">My logo</a>
+                <a href="gallery.html" class="hover:underline">Collection</a>
+                <a href="index.html#line-qr-code" class="hover:underline contact-link">Contact</a>
+            </div>
+            <div class="hidden md:flex space-x-4 text-white">
+                <!-- SEARCH and CART removed -->
+            </div>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-4 6h4"></path></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-900 bg-opacity-90 text-white mt-4 p-4 rounded-lg">
+            <a href="all-product.html" class="block py-2 hover:bg-gray-700 rounded">Product</a>
+            <a href="how-to-order.html" class="block py-2 hover:bg-gray-700 rounded">How to order</a>
+            <a href="size-chart.html" class="block py-2 hover:bg-gray-700 rounded">Size Chart</a>
+            <a href="logo-creation.html" class="block py-2 hover:bg-gray-700 rounded">My logo</a>
+            <a href="gallery.html" class="block py-2 hover:bg-gray-700 rounded">Collection</a>
+            <a href="index.html#line-qr-code" class="block py-2 hover:bg-gray-700 rounded contact-link">Contact</a>
+            <hr class="my-2 border-gray-700">
+            <!-- SEARCH and CART removed -->
+        </div>
+    </header>
+
+    <main class="pt-24 pb-16">
+        <section class="max-w-7xl mx-auto px-4 py-8">
+            <h1 class="text-4xl md:text-5xl font-bold text-center mb-12 text-orange-500">My Logo Design</h1>
+            <p class="text-lg text-center text-gray-300 mb-12">
+                お客様だけのオリジナルロゴマークをプロのデザイナーが無料で作成します。
+                チームの象徴となるエンブレムを、ぜひこの機会に作成してみませんか？
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Plan 1: 無料デザイン作成 -->
+                <div class="plan-card">
+                    <svg class="plan-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-100">無料デザイン作成</h3>
+                    <p class="text-gray-300 text-base mb-6">
+                        お客様のご要望に基づき、プロのデザイナーがオリジナルロゴを無料で作成します。
+                        修正回数に制限はありませんので、納得のいくまでデザインを追求できます。
+                    </p>
+                    <ul class="list-disc list-inside text-gray-300 text-left mb-6 space-y-2">
+                        <li>プロによるオリジナルデザイン</li>
+                        <li>修正回数無制限</li>
+                        <li>デザイン料は一切かかりません</li>
+                        <li>最短3営業日で初稿提出</li>
+                    </ul>
+                    <a href="index.html#line-qr-code" class="bg-orange-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-orange-600 transition duration-300 inline-block contact-link">
+                        デザインを依頼する
+                    </a>
+                </div>
+
+                <!-- Plan 2: 既存ロゴのデータ化 -->
+                <div class="plan-card">
+                    <svg class="plan-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-100">既存ロゴのデータ化</h3>
+                    <p class="text-gray-300 text-base mb-6">
+                        手書きのロゴや低解像度の画像しかない場合でも、高解像度のデータとして作成し直します。
+                        ユニフォームやウェアに美しくプリントするために必要なデータをご提供します。
+                    </p>
+                    <ul class="list-disc list-inside text-gray-300 text-left mb-6 space-y-2">
+                        <li>手書きや低解像度画像のデータ化</li>
+                        <li>プリントに最適な高解像度データ</li>
+                        <li>ロゴの微調整も可能</li>
+                        <li>迅速なデータ変換</li>
+                    </ul>
+                    <a href="index.html#line-qr-code" class="bg-orange-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-orange-600 transition duration-300 inline-block contact-link">
+                        データ化を依頼する
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <h4 class="font-bold text-lg mb-4">BRAND NAME</h4>
+                <p class="text-sm text-gray-400">
+                    Performance apparel designed for the modern athlete.
+                    <br>
+                    &copy; 2025 Brand Name. All rights reserved.
+                </p>
+            </div>
+            <div>
+                <h4 class="font-bold text-lg mb-4">SHOP</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="text-gray-400 hover:text-white">Men's</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Women's</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">New Arrivals</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Sale</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-lg mb-4">ABOUT</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="text-gray-400 hover:text-white">Our Story</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Careers</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Sustainability</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-lg mb-4">SUPPORT</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="text-gray-400 hover:text-white">FAQ</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Shipping & Returns</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Size Guide</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
