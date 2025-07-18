@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ギャラリー - スタイリッシュなスポーツウェアブランド</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            /* ダークテーマの背景色と文字色 */
+            background-color: #18181b; /* zinc-900 */
+            color: #f3f4f6; /* gray-100 */
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Active navigation link style */
+        .active-nav-link {
+            color: #f97316; /* orange-500 */
+            font-weight: 600; /* semi-bold */
+            text-decoration: underline;
+        }
+        /* Modal styles */
+        #image-modal {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        #modal-image {
+            max-width: 90vw;
+            max-height: 90vh;
+        }
+    </style>
+</head>
+<body class="bg-zinc-900 text-gray-100">
+
+    <!-- Header Section (Consistent with index.html) -->
+    <header class="absolute top-0 left-0 w-full z-10 p-4 bg-gray-900 bg-opacity-70">
+        <nav class="flex justify-between items-center max-w-7xl mx-auto">
+            <!-- BRAND LOGO link to homepage -->
+            <a href="index.html" class="text-white text-lg font-bold hover:opacity-80 transition-opacity duration-300">
+                <img src="IMG_3094-2.png" alt="BRAND LOGO" class="h-12 w-auto">
+            </a>
+            <div class="hidden md:flex space-x-6 text-white text-sm">
+                <a href="all-product.html" class="hover:underline">Product</a>
+                <a href="how-to-order.html" class="hover:underline">How to order</a>
+                <a href="size-chart.html" class="hover:underline">Size Chart</a>
+                <a href="logo-creation.html" class="hover:underline">My logo</a>
+                <a href="gallery.html" class="hover:underline active-nav-link">Collection</a>
+                <a href="index.html#line-qr-code" class="hover:underline contact-link">Contact</a>
+            </div>
+            <div class="hidden md:flex space-x-4 text-white">
+                <!-- SEARCH and CART removed -->
+            </div>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-4 6h4"></path></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-900 bg-opacity-90 text-white mt-4 p-4 rounded-lg">
+            <a href="all-product.html" class="block py-2 hover:bg-gray-700 rounded">Product</a>
+            <a href="how-to-order.html" class="block py-2 hover:bg-gray-700 rounded">How to order</a>
+            <a href="size-chart.html" class="block py-2 hover:bg-gray-700 rounded">Size Chart</a>
+            <a href="logo-creation.html" class="block py-2 hover:bg-gray-700 rounded">My logo</a>
+            <a href="gallery.html" class="block py-2 hover:bg-gray-700 rounded">Collection</a>
+            <a href="index.html#line-qr-code" class="block py-2 hover:bg-gray-700 rounded contact-link">Contact</a>
+            <hr class="my-2 border-gray-700">
+            <!-- SEARCH and CART removed -->
+        </div>
+    </header>
+
+    <main class="pt-24 pb-16">
+        <section class="max-w-7xl mx-auto px-4 py-8">
+            <h1 class="text-4xl md:text-5xl font-bold text-center mb-12 text-orange-500">Collection</h1>
+            <p class="text-lg text-center text-gray-300 mb-12">
+                これまでに作成したカスタムスポーツウェアのギャラリーです。<br>
+                お客様のチームや個人のスタイルに合わせたデザインのインスピレーションを見つけてください。
+            </p>
+
+            <!-- Grid layout for gallery items -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
+                <!-- Gallery Item 1 -->
+                <div class="bg-zinc-800 rounded-lg shadow-lg overflow-hidden cursor-pointer gallery-thumbnail" data-src="IMG_1956.jpg">
+                    <img src="IMG_1956.jpg" alt="チームユニフォーム - 表" class="w-full h-80 object-cover">
+                    <div class="p-4">
+                        <p class="text-gray-300 text-sm">チームユニフォーム - 表</p>
+                    </div>
+                </div>
+                <!-- Gallery Item 2 - Moved from original Gallery 8 -->
+                <div class="bg-zinc-800 rounded-lg shadow-lg overflow-hidden cursor-pointer gallery-thumbnail" data-src="IMG_1957.jpg">
+                    <img src="IMG_1957.jpg" alt="チームユニフォーム - 裏" class="w-full h-80 object-cover">
+                    <div class="p-4">
+                        <p class="text-gray-300 text-sm">チームユニフォーム - 裏</p>
+                    </div>
+                </div>
+                <!-- Gallery Item 3 - Moved from original Gallery 2 -->
+                <div class="bg-zinc-800 rounded-lg shadow-lg overflow-hidden cursor-pointer gallery-thumbnail" data-src="IMG_2104.PNG">
+                    <img src="IMG_2104.PNG" alt="練習着セット" class="w-full h-80 object-cover">
+                    <div class="p-4">
+                        <p class="text-gray-300 text-sm">練習着セット</p>
+                    </div>
+                </div>
+                <!-- Gallery Item 4 - Moved from original Gallery 3 -->
+                <div class="bg-zinc-800 rounded-lg shadow-lg overflow-hidden cursor-pointer gallery-thumbnail" data-src="IMG_2106.PNG">
+                    <img src="IMG_2106.PNG" alt="カスタムTシャツ" class="w-full h-80 object-cover">
+                    <div class="p-4">
+                        <p class="text-gray-300 text-sm">カスタムTシャツ - 鮮やかなカラー</p>
+                    </div>
+                </div>
+                <!-- Gallery Item 5 - No change -->
+                <div class="bg-zinc-800 rounded-lg shadow-lg overflow-hidden cursor-pointer gallery-thumbnail" data-src="IMG_2110.PNG">
+                    <img src="IMG_2110.PNG" alt="ベンチコート" class="w-full h-80 object-cover">
+                    <div class="p-4">
+                        <p class="text-gray-300 text-sm">ベンチコート - 冬季トレーニング</p>
+                    </div>
+                </div>
+                <!-- Gallery Item 6 - Moved from original Gallery 4 -->
+                <div class="bg-zinc-800 rounded-lg shadow-lg overflow-hidden cursor-pointer gallery-thumbnail" data-src="IMG_2108.PNG">
+                    <img src="IMG_2108.PNG" alt="リバーシブルウェア" class="w-full h-80 object-cover">
+                    <div class="p-4">
+                        <p class="text-gray-300 text-sm">リバーシブルウェア - 2WAYデザイン</p>
+                    </div>
+                </div>
+                <!-- Gallery Item 7 - Moved from original Gallery 6 -->
+                <div class="bg-zinc-800 rounded-lg shadow-lg overflow-hidden cursor-pointer gallery-thumbnail" data-src="IMG_2734.PNG">
+                    <img src="IMG_2734.PNG" alt="昇華タンクトップ" class="w-full h-80 object-cover">
+                    <div class="p-4">
+                        <p class="text-gray-300 text-sm">昇華タンクトップ - ラウンドカット</p>
+                    </div>
+                </div>
+                <!-- Gallery Item 8 - Moved from original Gallery 7 -->
+                <div class="bg-zinc-800 rounded-lg shadow-lg overflow-hidden cursor-pointer gallery-thumbnail" data-src="IMG_3123.jpg">
+                    <img src="IMG_3123.jpg" alt="新しいカスタムユニフォーム" class="w-full h-80 object-cover">
+                    <div class="p-4">
+                        <p class="text-gray-300 text-sm">新しいカスタムユニフォーム</p>
+                    </div>
+                </div>
+                <!-- Gallery Item 9 - No change -->
+                <div class="bg-zinc-800 rounded-lg shadow-lg overflow-hidden cursor-pointer gallery-thumbnail" data-src="IMG_3118.jpg">
+                    <img src="IMG_3118.jpg" alt="新しい練習着セット" class="w-full h-80 object-cover">
+                    <div class="p-4">
+                        <p class="text-gray-300 text-sm">新しい練習着セット</p>
+                    </div>
+                </div>
+                <!-- Gallery Item 10 - Moved from original Gallery 13 -->
+                <div class="bg-zinc-800 rounded-lg shadow-lg overflow-hidden cursor-pointer gallery-thumbnail" data-src="IMG_2746.PNG">
+                    <img src="IMG_2746.PNG" alt="バスケユニフォーム - プロフェッショナル仕様" class="w-full h-80 object-cover">
+                    <div class="p-4">
+                        <p class="text-gray-300 text-sm">バスケユニフォーム - プロフェッショナル仕様</p>
+                    </div>
+                </div>
+                <!-- Gallery Item 11 - Moved from original Gallery 10 -->
+                <div class="bg-zinc-800 rounded-lg shadow-lg overflow-hidden cursor-pointer gallery-thumbnail" data-src="IMG_2743.PNG">
+                    <img src="IMG_2743.PNG" alt="カスタムユニフォーム - エネルギッシュなデザイン" class="w-full h-80 object-cover">
+                    <div class="p-4">
+                        <p class="text-gray-300 text-sm">カスタムユニフォーム - エネルギッシュなデザイン</p>
+                    </div>
+                </div>
+                <!-- Gallery Item 12 - Moved from original Gallery 11 -->
+                <div class="bg-zinc-800 rounded-lg shadow-lg overflow-hidden cursor-pointer gallery-thumbnail" data-src="IMG_2744.PNG">
+                    <img src="IMG_2744.PNG" alt="練習用Tシャツ - 通気性抜群" class="w-full h-80 object-cover">
+                    <div class="p-4">
+                        <p class="text-gray-300 text-sm">練習用Tシャツ - 通気性抜群</p>
+                    </div>
+                </div>
+                <!-- Gallery Item 13 - Original Gallery 12 shifted -->
+                <div class="bg-zinc-800 rounded-lg shadow-lg overflow-hidden cursor-pointer gallery-thumbnail" data-src="IMG_2888.JPG">
+                    <img src="IMG_2888.JPG" alt="オリジナルデザイン" class="w-full h-80 object-cover">
+                    <div class="p-4">
+                        <p class="text-gray-300 text-sm">オリジナルデザイン - 個性を表現</p>
+                    </div>
+                </div>
+                <!-- Gallery Item 14 - No change -->
+                <div class="bg-zinc-800 rounded-lg shadow-lg overflow-hidden cursor-pointer gallery-thumbnail" data-src="IMG_3013.PNG">
+                    <img src="IMG_3013.PNG" alt="カスタムユニフォーム" class="w-full h-80 object-cover">
+                    <div class="p-4">
+                        <p class="text-gray-300 text-sm">カスタムユニフォーム - チームカラー</p>
+                    </div>
+                </div>
+                <!-- Gallery Item 15 - No change -->
+                <div class="bg-zinc-800 rounded-lg shadow-lg overflow-hidden cursor-pointer gallery-thumbnail" data-src="IMG_3014.PNG">
+                    <img src="IMG_3014.PNG" alt="昇華プリントウェア" class="w-full h-80 object-cover">
+                    <div class="p-4">
+                        <p class="text-gray-300 text-sm">昇華プリントウェア - 高品質グラフィック</p>
+                    </div>
+                </div>
+                <!-- Gallery Item 16 - No change -->
+                <div class="bg-zinc-800 rounded-lg shadow-lg overflow-hidden cursor-pointer gallery-thumbnail" data-src="IMG_3015.PNG">
+                    <img src="IMG_3015.PNG" alt="バスケットボールウェア" class="w-full h-80 object-cover">
+                    <div class="p-4">
+                        <p class="text-gray-300 text-sm">バスケットボールウェア - 最新デザイン</p>
+                    </div>
+                </div>
+                <!-- Gallery Item 17 - No change -->
+                <div class="bg-zinc-800 rounded-lg shadow-lg overflow-hidden cursor-pointer gallery-thumbnail" data-src="IMG_3125.jpg">
+                    <img src="IMG_3125.jpg" alt="新しいコレクションアイテム" class="w-full h-80 object-cover">
+                    <div class="p-4">
+                        <p class="text-gray-300 text-sm">新しいコレクションアイテム</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Image Modal Structure -->
+    <div id="image-modal" class="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50 hidden">
+        <div class="relative bg-zinc-800 p-4 rounded-lg max-w-4xl max-h-full overflow-auto">
+            <button id="close-modal" class="absolute top-2 right-2 text-white text-3xl font-bold p-2 leading-none hover:text-orange-500">&times;</button>
+            <img id="modal-image" src="" alt="Enlarged Image" class="max-w-full max-h-screen object-contain">
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <h4 class="font-bold text-lg mb-4">BRAND NAME</h4>
+                <p class="text-sm text-gray-400">
+                    Performance apparel designed for the modern athlete.
+                    <br>
+                    &copy; 2025 Brand Name. All rights reserved.
+                </p>
+            </div>
+            <div>
+                <h4 class="font-bold text-lg mb-4">SHOP</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="text-gray-400 hover:text-white">Men's</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Women's</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">New Arrivals</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Sale</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-lg mb-4">ABOUT</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="text-gray-400 hover:text-white">Our Story</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Careers</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Sustainability</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-lg mb-4">SUPPORT</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="text-gray-400 hover:text-white">FAQ</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Shipping & Returns</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Size Guide</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            // Function to set active navigation link
+            function setActiveNavLink() {
+                const currentPath = window.location.pathname.split('/').pop();
+                const navLinks = document.querySelectorAll('nav a');
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active-nav-link');
+                    const linkHref = link.getAttribute('href');
+                    if (linkHref) {
+                        const linkFilename = linkHref.split('#')[0].split('/').pop();
+                        if (linkFilename === currentPath) {
+                            link.classList.add('active-nav-link');
+                        }
+                    }
+                });
+            }
+            setActiveNavLink();
+            window.addEventListener('hashchange', setActiveNavLink);
+
+            // Image Modal Logic
+            const galleryThumbnails = document.querySelectorAll('.gallery-thumbnail');
+            const imageModal = document.getElementById('image-modal');
+            const modalImage = document.getElementById('modal-image');
+            const closeModalButton = document.getElementById('close-modal');
+
+            galleryThumbnails.forEach(thumbnail => {
+                thumbnail.addEventListener('click', () => {
+                    const imageUrl = thumbnail.dataset.src;
+                    modalImage.src = imageUrl;
+                    imageModal.classList.remove('hidden');
+                    document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+                });
+            });
+
+            closeModalButton.addEventListener('click', () => {
+                imageModal.classList.add('hidden');
+                document.body.style.overflow = ''; // Restore scrolling
+            });
+
+            // Close modal when clicking outside the image
+            imageModal.addEventListener('click', (event) => {
+                if (event.target === imageModal) {
+                    imageModal.classList.add('hidden');
+                    document.body.style.overflow = '';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
