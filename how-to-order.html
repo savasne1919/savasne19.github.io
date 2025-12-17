@@ -4,26 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>注文方法 - スタイリッシュなスポーツウェアブランド</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts - Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            /* ダークテーマの背景色と文字色 */
-            background-color: #18181b; /* zinc-900 */
-            color: #f3f4f6; /* gray-100 */
+            /* ネイビーテーマの背景色と文字色 */
+            background-color: #172554; /* blue-950 */
+            color: #ffffff;
         }
         html {
             scroll-behavior: smooth;
         }
         .step-card {
-            background-color: #27272a; /* zinc-800 */
+            /* カード背景を全体の背景と同じネイビーに設定 */
+            background-color: #172554;
+            /* 背景と同化しないように枠線を追加 */
+            border: 1px solid #1e40af; /* blue-800 */
             border-radius: 0.5rem; /* rounded-lg */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* shadow-md */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* shadow-md */
             padding: 1.5rem;
             text-align: left; /* 段落のテキストは左揃えを維持 */
         }
@@ -40,23 +40,21 @@
         .step-number {
             font-size: 3rem; /* text-5xl */
             font-weight: 700; /* font-bold */
-            color: #f97316; /* orange-500 */
+            color: #ffffff; /* orange-500 -> white */
             margin-bottom: 1rem;
         }
         /* Active navigation link style */
         .active-nav-link {
-            color: #f97316; /* orange-500 */
+            color: #ffffff; /* orange-500 -> white */
             font-weight: 600; /* semi-bold */
             text-decoration: underline;
         }
     </style>
 </head>
-<body class="bg-zinc-900 text-gray-100">
+<body class="bg-[#172554] text-white">
 
-    <!-- Header Section -->
-    <header class="absolute top-0 left-0 w-full z-10 p-4 bg-gray-900 bg-opacity-70">
+    <header class="absolute top-0 left-0 w-full z-10 p-4 bg-[#172554] bg-opacity-70">
         <nav class="flex justify-between items-center max-w-7xl mx-auto">
-            <!-- BRAND LOGO link to homepage -->
             <a href="index.html" class="text-white text-lg font-bold hover:opacity-80 transition-opacity duration-300">
                 <img src="IMG_3094-2.png" alt="BRAND LOGO" class="h-12 w-auto">
             </a>
@@ -69,61 +67,54 @@
                 <a href="index.html#line-qr-code" class="hover:underline contact-link">Contact</a>
             </div>
             <div class="hidden md:flex space-x-4 text-white">
-                <!-- SEARCH and CART removed -->
-            </div>
-            <!-- Mobile Menu Button -->
+                </div>
             <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-4 6h4"></path></svg>
             </button>
         </nav>
-        <!-- Mobile Menu (Hidden by default) -->
-        <div id="mobile-menu" class="hidden md:hidden bg-gray-900 bg-opacity-90 text-white mt-4 p-4 rounded-lg">
-            <a href="all-product.html" class="block py-2 hover:bg-gray-700 rounded">Product</a>
-            <a href="how-to-order.html" class="block py-2 hover:bg-gray-700 rounded">How to order</a>
-            <a href="size-chart.html" class="block py-2 hover:bg-gray-700 rounded">Size Chart</a>
-            <a href="logo-creation.html" class="block py-2 hover:bg-gray-700 rounded">My logo</a>
-            <a href="gallery.html" class="block py-2 hover:bg-gray-700 rounded">Collection</a>
-            <a href="index.html#line-qr-code" class="block py-2 hover:bg-gray-700 rounded contact-link">Contact</a>
-            <hr class="my-2 border-gray-700">
-            <!-- SEARCH and CART removed -->
-        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-[#172554] bg-opacity-95 text-white mt-4 p-4 rounded-lg border border-blue-800">
+            <a href="all-product.html" class="block py-2 hover:bg-blue-800 rounded">Product</a>
+            <a href="how-to-order.html" class="block py-2 hover:bg-blue-800 rounded">How to order</a>
+            <a href="size-chart.html" class="block py-2 hover:bg-blue-800 rounded">Size Chart</a>
+            <a href="logo-creation.html" class="block py-2 hover:bg-blue-800 rounded">My logo</a>
+            <a href="gallery.html" class="block py-2 hover:bg-blue-800 rounded">Collection</a>
+            <a href="index.html#line-qr-code" class="block py-2 hover:bg-blue-800 rounded contact-link">Contact</a>
+            <hr class="my-2 border-blue-800">
+            </div>
     </header>
 
     <main class="pt-24 pb-16">
         <section class="max-w-7xl mx-auto px-4 py-8">
-            <h1 class="text-4xl md:text-5xl font-bold text-center mb-12 text-orange-500">How to order</h1>
-            <p class="text-lg text-center text-gray-300 mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-center mb-12 text-white">How to order</h1>
+            <p class="text-lg text-center text-blue-100 mb-12">
                 カスタムスポーツウェアの注文は簡単です。以下のステップに従って、あなただけのオリジナルウェアを作成しましょう。
             </p>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Step 1: デザインの作成 -->
                 <div class="step-card">
-                    <h3 class="text-2xl font-semibold mb-4 text-orange-500">デザインの作成</h3>
-                    <p class="text-gray-300 text-base">
+                    <h3 class="text-2xl font-semibold mb-4 text-white">デザインの作成</h3>
+                    <p class="text-blue-100 text-base">
                         ご希望のウェア名、デザインのイメージ、カラーをお聞かせください。画像やラフスケッチを元にしてデザインを作成することも可能です。
                     </p>
-                    <p class="text-gray-300 text-base">
+                    <p class="text-blue-100 text-base">
                         デザイン料は無料ですので、お気軽にデザイン作成をお申し付けください。
                     </p>
                 </div>
 
-                <!-- Step 2: お見積もり・ご注文 -->
                 <div class="step-card">
-                    <h3 class="text-2xl font-semibold mb-4 text-orange-500">お見積もり・ご注文</h3>
-                    <p class="text-gray-300 text-base">
+                    <h3 class="text-2xl font-semibold mb-4 text-white">お見積もり・ご注文</h3>
+                    <p class="text-blue-100 text-base">
                         デザインが確定しましたら、枚数やサイズ、番号など詳細をお伝えください。お見積りをお渡しいたします。
                         お支払い後、正式にご注文となります。
                     </p>
                 </div>
 
-                <!-- Step 3: 製造・お届け -->
                 <div class="step-card">
-                    <h3 class="text-2xl font-semibold mb-4 text-orange-500">製造・お届け</h3>
-                    <p class="text-gray-300 text-base">
+                    <h3 class="text-2xl font-semibold mb-4 text-white">製造・お届け</h3>
+                    <p class="text-blue-100 text-base">
                         ご注文確定後、お渡しまで３０日程度いただきます。ご希望の期日がございましたらお早めにお伝えください。可能な限り期日に間に合うよう手配いたします。
                     </p>
-                    <p class="text-gray-300 text-base">
+                    <p class="text-blue-100 text-base">
                         ３万円以上のご注文は送料無料とさせていただいております。ぜひご利用ください。
                     </p>
                 </div>
@@ -137,12 +128,11 @@
         </section>
     </main>
 
-    <!-- Footer Section -->
-    <footer class="bg-gray-900 text-white py-12">
+    <footer class="bg-[#172554] text-white py-12 border-t border-blue-900">
         <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
                 <h4 class="font-bold text-lg mb-4">BRAND NAME</h4>
-                <p class="text-sm text-gray-400">
+                <p class="text-sm text-blue-200">
                     Performance apparel designed for the modern athlete.
                     <br>
                     &copy; 2025 Brand Name. All rights reserved.
@@ -151,34 +141,33 @@
             <div>
                 <h4 class="font-bold text-lg mb-4">SHOP</h4>
                 <ul class="space-y-2 text-sm">
-                    <li><a href="#" class="text-gray-400 hover:text-white">Men's</a></li>
-                    <li><a href="#" class="text-gray-400 hover:text-white">Women's</a></li>
-                    <li><a href="#" class="text-gray-400 hover:text-white">New Arrivals</a></li>
-                    <li><a href="#" class="text-gray-400 hover:text-white">Sale</a></li>
+                    <li><a href="#" class="text-blue-200 hover:text-white">Men's</a></li>
+                    <li><a href="#" class="text-blue-200 hover:text-white">Women's</a></li>
+                    <li><a href="#" class="text-blue-200 hover:text-white">New Arrivals</a></li>
+                    <li><a href="#" class="text-blue-200 hover:text-white">Sale</a></li>
                 </ul>
             </div>
             <div>
                 <h4 class="font-bold text-lg mb-4">ABOUT</h4>
                 <ul class="space-y-2 text-sm">
-                    <li><a href="#" class="text-gray-400 hover:text-white">Our Story</a></li>
-                    <li><a href="#" class="text-gray-400 hover:text-white">Careers</a></li>
-                    <li><a href="#" class="text-gray-400 hover:text-white">Sustainability</a></li>
-                    <li><a href="#" class="text-gray-400 hover:text-white">Contact Us</a></li>
+                    <li><a href="#" class="text-blue-200 hover:text-white">Our Story</a></li>
+                    <li><a href="#" class="text-blue-200 hover:text-white">Careers</a></li>
+                    <li><a href="#" class="text-blue-200 hover:text-white">Sustainability</a></li>
+                    <li><a href="#" class="text-blue-200 hover:text-white">Contact Us</a></li>
                 </ul>
             </div>
             <div>
                 <h4 class="font-bold text-lg mb-4">SUPPORT</h4>
                 <ul class="space-y-2 text-sm">
-                    <li><a href="#" class="text-gray-400 hover:text-white">FAQ</a></li>
-                    <li><a href="#" class="text-gray-400 hover:text-white">Shipping & Returns</a></li>
-                    <li><a href="#" class="text-gray-400 hover:text-white">Size Guide</a></li>
-                    <li><a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+                    <li><a href="#" class="text-blue-200 hover:text-white">FAQ</a></li>
+                    <li><a href="#" class="text-blue-200 hover:text-white">Shipping & Returns</a></li>
+                    <li><a href="#" class="text-blue-200 hover:text-white">Size Guide</a></li>
+                    <li><a href="#" class="text-blue-200 hover:text-white">Privacy Policy</a></li>
                 </ul>
             </div>
         </div>
     </footer>
 
-    <!-- Custom JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
