@@ -3,78 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>スタイリッシュなスポーツウェアブランド</title>
+    <title>ロゴ作成サービス - スタイリッシュなスポーツウェアブランド</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            /* 全体の背景色 */
+            /* ネイビーテーマの背景色と文字色 */
             background-color: #172554; /* blue-950 */
             color: #ffffff;
         }
-        /* スムーズスクロールを追加 */
         html {
             scroll-behavior: smooth;
         }
-        /* Product card specific styles */
-        .product-card-preview {
-            /* 画像（カード）の背景：全体の背景色と同じにする */
+        .plan-card {
+            /* カード背景を全体の背景と同じネイビーに設定 */
             background-color: #172554;
             /* 背景と同化しないように枠線を追加 */
             border: 1px solid #1e40af; /* blue-800 */
-            border-radius: 0.5rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            border-radius: 0.5rem; /* rounded-lg */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* shadow-md */
             transition: transform 0.3s ease-in-out;
+            padding: 2rem 1.5rem; /* 上下のパディングを少し広めに */
+            display: flex; /* Use flexbox for internal layout */
+            flex-direction: column; /* Stack content vertically */
+            align-items: center; /* Center items horizontally */
+            text-align: center; /* Center text */
+            position: relative;
+            overflow: hidden;
         }
-        .product-card-preview:hover {
+        .plan-card:hover {
             transform: translateY(-5px);
-            border-color: #3b82f6; /* ホバー時に枠線を少し明るく */
+            border-color: #3b82f6; /* ホバー時に枠線を明るく */
         }
-        /* Feature card specific styles */
-        .feature-card {
-            /* 画像（カード）の背景：全体の背景色と同じにする */
-            background-color: #172554;
-            /* 背景と同化しないように枠線を追加 */
-            border: 1px solid #1e40af; /* blue-800 */
-            border-radius: 0.5rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-            padding: 1.5rem;
-            text-align: left;
-            transition: transform 0.3s ease-in-out;
+        /* 竹コース（真ん中）を目立たせるためのスタイル */
+        .plan-card.featured {
+            border-color: #f97316; /* orange-500 */
+            border-width: 2px;
+            box-shadow: 0 10px 15px -3px rgba(249, 115, 22, 0.2);
         }
-        .feature-card:hover {
-            transform: translateY(-5px);
-            border-color: #3b82f6; /* ホバー時に枠線を少し明るく */
-        }
-        .feature-icon {
-            color: #f97316;
-            font-size: 1.5rem;
+        .plan-icon {
+            color: #f97316; /* orange-500 */
+            font-size: 3rem; /* text-5xl */
             margin-bottom: 1rem;
-            width: 48px;
-            height: 48px;
+            width: 64px;
+            height: 64px;
         }
-        .feature-image-icon {
-            width: 1.5rem;
-            height: 1.5rem;
-            margin: 0 auto 1rem auto;
-        }
-        .logo-svg {
-            height: 2rem;
-            width: auto;
+        .price-text {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
         }
         /* Active navigation link style */
         .active-nav-link {
             color: #ffffff;
             font-weight: 600;
             text-decoration: underline;
-        }
-        .gallery-background {
-            background-image: url('5A4F8081-302C-4E69-ACF4-77E14A8848DF.JPG'), url('7289983B-F9F1-40FF-8C10-C4E86030D5B4 2.JPG');
-            background-size: 50% auto, 50% auto;
-            background-repeat: no-repeat, no-repeat;
-            background-position: left top, right center;
         }
     </style>
 </head>
@@ -89,10 +75,12 @@
                 <a href="all-product.html" class="hover:underline">Product</a>
                 <a href="how-to-order.html" class="hover:underline">How to order</a>
                 <a href="size-chart.html" class="hover:underline">Size Chart</a>
-                <a href="logo-creation.html" class="hover:underline">My logo</a>
+                <a href="logo-creation.html" class="hover:underline active-nav-link">My logo</a>
                 <a href="gallery.html" class="hover:underline">Collection</a>
                 <a href="index.html#line-qr-code" class="hover:underline contact-link">Contact</a>
             </div>
+            <div class="hidden md:flex space-x-4 text-white">
+                </div>
             <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-4 6h4"></path></svg>
             </button>
@@ -108,195 +96,88 @@
         </div>
     </header>
 
-    <section class="relative w-full h-96 bg-cover bg-center" style="background-image: url('IMG_1954.jpg');">
-        <div class="absolute inset-0 bg-[#172554] opacity-50"></div>
-        <div class="relative z-10 flex flex-col items-center justify-center h-full text-white text-center p-4">
-            <h1 class="text-4xl md:text-6xl font-bold mb-4">Product</h1>
-            <p class="text-lg md:text-xl mb-8">最新のカスタムスポーツウェアを豊富に取り揃えています。</p>
-            <a href="all-product.html" class="bg-blue-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-500 transition duration-300 inline-block">
-                すべて見る
-            </a>
-        </div>
-    </section>
+    <main class="pt-24 pb-16">
+        <section class="max-w-7xl mx-auto px-4 py-8">
+            <h1 class="text-4xl md:text-5xl font-bold text-center mb-12 text-white">My Logo Design</h1>
+            <p class="text-lg text-center text-blue-100 mb-12">
+                プロのデザイナーがお客様だけのオリジナルロゴを作成します。<br>
+                ご予算とニーズに合わせて、3つのプランからお選びいただけます。
+            </p>
 
-    <section class="py-8 bg-[#172554]">
-        <div class="max-w-7xl mx-auto px-4">
-            <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-white">PICK UP ITEM</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="product-card-preview p-4 text-center">
-                    <a href="uniform-detail.html">
-                        <img src="IMG_2978.PNG" alt="ユニフォーム" class="w-full h-auto object-contain rounded-md mb-2 mx-auto">
-                    </a>
-                    <h3 class="text-xl font-semibold mb-2 text-white">ユニフォーム</h3>
-                    <p class="text-white text-2xl font-bold mb-4">¥7,000</p>
-                    <p class="text-blue-100 text-sm mb-4">
-                        3種類の生地から選べ、シャツは肩周りのカット、パンツは裾幅にこだわったユニフォーム。
-                    </p>
-                    <a href="uniform-detail.html" class="bg-blue-600 text-white px-6 py-2 rounded-full font-semibold hover:bg-blue-500 transition duration-300 inline-block">
-                        詳細を見る
-                    </a>
-                </div>
-
-                <div class="product-card-preview p-4 text-center">
-                    <a href="reversible-detail.html">
-                        <img src="IMG_2977.PNG" alt="リバーシブル" class="w-full h-auto object-contain rounded-md mb-2 mx-auto">
-                    </a>
-                    <h3 class="text-xl font-semibold mb-2 text-white">リバーシブル</h3>
-                    <p class="text-white text-2xl font-bold mb-4">¥7,500</p>
-                    <p class="text-blue-100 text-sm mb-4">
-                        1着で2つのデザインが楽しめるリバーシブルウェア。
-                    </p>
-                    <a href="reversible-detail.html" class="bg-blue-600 text-white px-6 py-2 rounded-full font-semibold hover:bg-blue-500 transition duration-300 inline-block">
-                        詳細を見る
-                    </a>
-                </div>
-
-                <div class="product-card-preview p-4 text-center">
-                    <a href="tshirt-detail.html">
-                        <img src="IMG_2976.PNG" alt="Tシャツ" class="w-full h-auto object-contain rounded-md mb-2 mx-auto">
-                    </a>
-                    <h3 class="text-xl font-semibold mb-2 text-white">Tシャツ</h3>
-                    <p class="text-white text-2xl font-bold mb-4">¥3,500</p>
-                    <p class="text-blue-100 text-sm mb-4">
-                        400色の中からカラーを選べ、デザインも自由なTシャツ。
-                    </p>
-                    <a href="tshirt-detail.html" class="bg-blue-600 text-white px-6 py-2 rounded-full font-semibold hover:bg-blue-500 transition duration-300 inline-block">
-                        詳細を見る
-                    </a>
-                </div>
-            </div>
-            <div class="text-center mt-12">
-                <a href="all-product.html" class="bg-orange-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-orange-600 transition duration-300 inline-block">
-                    すべての商品を見る
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-16 bg-[#172554]">
-        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row gap-8">
-            <div id="how-to-order" class="relative w-full md:w-1/2 py-20 bg-cover bg-center rounded-lg overflow-hidden" style="background-image: url('Gemini_Generated_Image_cmo0yjcmo0yjcmo0.png');">
-                <div class="absolute inset-0 bg-[#172554] opacity-70"></div>
-                <div class="relative z-10 max-w-xl mx-auto px-4 text-center">
-                    <h2 class="text-4xl md:text-5xl font-bold mb-4 text-white">HOW TO ORDER</h2>
-                    <p class="text-lg md:text-xl mb-8">カスタムスポーツウェアの注文方法についてご案内します。</p>
-                    <a href="how-to-order.html" class="bg-orange-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-orange-600 transition duration-300 inline-block">
-                        注文方法を見る
-                    </a>
-                </div>
-            </div>
-
-            <div id="size-chart-section" class="relative w-full md:w-1/2 py-20 bg-cover bg-center rounded-lg overflow-hidden" style="background-image: url('Gemini_Generated_Image_fppkp7fppkp7fppk.png');">
-                <div class="absolute inset-0 bg-[#172554] opacity-70"></div>
-                <div class="relative z-10 max-w-xl mx-auto px-4 text-center">
-                    <h2 class="text-4xl md:text-5xl font-bold mb-4 text-white">Size Chart</h2>
-                    <p class="text-lg md:text-xl mb-8">
-                        最適なサイズを見つけるための詳細なサイズ表はこちら。
-                    </p>
-                    <a href="size-chart.html" class="bg-orange-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-orange-600 transition duration-300 inline-block">
-                        詳細を見る
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-16 bg-[#172554]">
-        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row gap-8">
-            <div id="logo-creation" class="relative w-full md:w-1/2 py-20 bg-cover bg-center rounded-lg overflow-hidden" style="background-image: url('15296fbc6040d5d72f9ca1dc622e7984.JPG');">
-                <div class="absolute inset-0 bg-[#172554] opacity-70"></div>
-                <div class="relative z-10 max-w-4xl mx-auto px-4 text-center">
-                    <h2 class="text-4xl md:text-5xl font-bold mb-4 text-white">My Logo Design</h2>
-                    <p class="text-lg md:text-xl mb-8">
-                        お客様だけのオリジナルロゴマークをプロのデザイナーが無料で作成します。
-                    </p>
-                    <a href="logo-creation.html" class="bg-orange-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-orange-600 transition duration-300 inline-block">
-                        詳細を見る
-                    </a>
-                </div>
-            </div>
-
-            <div id="gallery-section" class="relative w-full md:w-1/2 py-20 bg-cover bg-center rounded-lg overflow-hidden" style="background-image: url('5A4F8081-302C-4E69-ACF4-77E14A8848DF.JPG'), url('7289983B-F9F1-40FF-8C10-C4E86030D5B4 2.JPG'); background-size: 50% auto, 50% auto; background-repeat: no-repeat, no-repeat; background-position: left top, right center;">
-                <div class="absolute inset-0 bg-[#172554] opacity-70"></div>
-                <div class="relative z-10 max-w-4xl mx-auto px-4 text-center">
-                    <h2 class="text-4xl md:text-5xl font-bold mb-4 text-white">Collection</h2>
-                    <p class="text-lg md:text-xl mb-8">
-                        これまでに作成したカスタムウェアのギャラリーをご覧ください。
-                    </p>
-                    <a href="gallery.html" class="bg-orange-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-orange-600 transition duration-300 inline-block">
-                        ギャラリーを見る
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-16 bg-[#172554]">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-white">WHAT SAVAGE BASKETBALL</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="feature-card">
-                    <svg class="feature-icon mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 17l-4-4m0 4l4-4"></path></svg>
-                    <h3 class="feature-title text-white text-xl font-bold">コスパ最強！</h3>
-                    <p class="feature-description text-blue-100">
-                        業界最安値級の価格で、高品質なカスタムウェアを提供します。
+                
+                <div class="plan-card">
+                    <svg class="plan-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <h3 class="text-2xl font-semibold mb-2 text-white">梅コース</h3>
+                    <p class="text-blue-200 text-sm mb-4">Simple Plan</p>
+                    <div class="price-text">¥10,000</div>
+                    <p class="text-blue-100 text-base mb-6">
+                        シンプルなチームロゴを作成するプランです。コストを抑えてロゴを作りたいチームにおすすめです。
                     </p>
+                    <ul class="list-disc list-inside text-blue-100 text-left mb-auto space-y-2 w-full px-4">
+                        <li>シンプルデザイン作成</li>
+                        <li>修正2回まで</li>
+                        <li>高解像度データ納品</li>
+                    </ul>
+                    <a href="index.html#line-qr-code" class="mt-8 w-full bg-blue-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-500 transition duration-300 inline-block contact-link">
+                        梅コースを申し込む
+                    </a>
                 </div>
-                <div class="feature-card">
-                    <svg class="feature-icon mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
-                    <h3 class="feature-title text-white text-xl font-bold">デザイン料が完全無料</h3>
-                    <p class="feature-description text-blue-100">
-                        プロのデザイナーによるオリジナルデザイン作成が料金に含まれています。
+
+                <div class="plan-card featured relative">
+                    <div class="absolute top-0 right-0 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">
+                        POPULAR
+                    </div>
+                    <svg class="plan-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path></svg>
+                    <h3 class="text-2xl font-semibold mb-2 text-white">竹コース</h3>
+                    <p class="text-blue-200 text-sm mb-4">Standard Plan</p>
+                    <div class="price-text text-orange-400">¥30,000</div>
+                    <p class="text-blue-100 text-base mb-6">
+                        拘りのオリジナルロゴを<span class="font-bold text-white">1つ</span>作成します。オリジナリティを追求したいチームに最適です。
                     </p>
+                    <ul class="list-disc list-inside text-blue-100 text-left mb-auto space-y-2 w-full px-4">
+                        <li><span class="font-semibold text-white">拘りのロゴデザイン 1案</span></li>
+                        <li>修正回数無制限</li>
+                        <li>エンブレム・ロゴタイプ対応</li>
+                        <li>著作権譲渡</li>
+                    </ul>
+                    <a href="index.html#line-qr-code" class="mt-8 w-full bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-orange-600 transition duration-300 inline-block contact-link">
+                        竹コースを申し込む
+                    </a>
                 </div>
-                <div class="feature-card">
-                    <svg class="feature-icon mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
-                    <h3 class="feature-title text-white text-xl font-bold">昇華プリントで高品質</h3>
-                    <p class="feature-description text-blue-100">
-                        最新の昇華プリント技術により、色鮮やかで耐久性に優れたプリントを実現。
+
+                <div class="plan-card">
+                    <svg class="plan-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+                    <h3 class="text-2xl font-semibold mb-2 text-white">松コース</h3>
+                    <p class="text-blue-200 text-sm mb-4">Premium Plan</p>
+                    <div class="price-text">¥50,000</div>
+                    <p class="text-blue-100 text-base mb-6">
+                        拘りのオリジナルロゴを<span class="font-bold text-white">2つ</span>作成する最上級プラン。複数のバリエーションが欲しい場合に。
                     </p>
+                    <ul class="list-disc list-inside text-blue-100 text-left mb-auto space-y-2 w-full px-4">
+                        <li><span class="font-semibold text-white">拘りのロゴデザイン 2案</span></li>
+                        <li>メインロゴ＋サブロゴ等</li>
+                        <li>修正回数無制限</li>
+                        <li>優先対応</li>
+                    </ul>
+                    <a href="index.html#line-qr-code" class="mt-8 w-full bg-blue-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-500 transition duration-300 inline-block contact-link">
+                        松コースを申し込む
+                    </a>
                 </div>
-                <div class="feature-card">
-                    <img src="coin_17453635.png" alt="コインアイコン" class="feature-image-icon mx-auto" style="width: 48px; height: 48px; object-fit: contain;">
-                    <h3 class="feature-title text-white text-xl font-bold">追加料金は一切なし</h3>
-                    <p class="feature-description text-blue-100">
-                        複雑なデザインや多色使いでも追加料金は発生しません。
-                    </p>
-                </div>
-                <div class="feature-card">
-                    <svg class="feature-icon mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
-                    <h3 class="feature-title text-white text-xl font-bold">機能性設計</h3>
-                    <p class="feature-description text-blue-100">
-                        実際のプレイを考慮した機能性重視の設計です。
-                    </p>
-                </div>
-                <div class="feature-card">
-                    <svg class="feature-icon mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.007 12.007 0 002 12c0 2.755 1.05 5.49 2.927 7.507l.008.008L12 22l7.065-2.495.008-.008A12.007 12.007 0 0022 12c0-2.755-1.05-5.49-2.927-7.507z"></path></svg>
-                    <h3 class="feature-title text-white text-xl font-bold">JBA規定クリア</h3>
-                    <p class="feature-description text-blue-100">
-                        日本バスケットボール協会（JBA）の規定に沿ったデザインも可能です。
-                    </p>
-                </div>
+
             </div>
-            <div class="text-center mt-12">
-                <a href="all-product.html" class="bg-orange-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-orange-600 transition duration-300 inline-block">
-                    すべての商品を見る
+            
+            <div class="mt-12 p-6 bg-[#1e3a8a] rounded-lg border border-blue-800 text-center">
+                <h3 class="text-xl font-semibold mb-4 text-white">ご相談・お見積もり</h3>
+                <p class="text-blue-100 mb-6">
+                    どのコースが良いか迷われている場合や、特殊なご要望がある場合は、LINEにてお気軽にご相談ください。
+                </p>
+                <a href="index.html#line-qr-code" class="text-orange-400 hover:text-orange-300 font-semibold underline">
+                    LINEで問い合わせる &rarr;
                 </a>
             </div>
-        </div>
-    </section>
-
-    <section id="line-qr-code" class="py-16 bg-[#172554]">
-        <div class="max-w-3xl mx-auto px-4">
-            <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-white">Contact</h2>
-            <h2 class="text-3xl font-bold mb-4 text-white">LINE公式アカウント</h2>
-            <p class="text-blue-100 mb-8">お友達追加で最新情報や限定クーポンをゲット！</p>
-            <div class="flex justify-center items-center">
-                <img src="line_oa_chat_250709_143710_group_0.png" alt="LINE公式アカウントQRコード" class="w-48 h-48 rounded-lg mb-4 shadow-md">
-            </div>
-            <p class="text-blue-200 text-sm mt-4">上記のQRコードをLINEアプリで読み込んでください。</p>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer class="bg-[#172554] text-white py-12 border-t border-blue-900">
         <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -313,12 +194,16 @@
                 <ul class="space-y-2 text-sm">
                     <li><a href="#" class="text-blue-200 hover:text-white">Men's</a></li>
                     <li><a href="#" class="text-blue-200 hover:text-white">Women's</a></li>
+                    <li><a href="#" class="text-blue-200 hover:text-white">New Arrivals</a></li>
+                    <li><a href="#" class="text-blue-200 hover:text-white">Sale</a></li>
                 </ul>
             </div>
             <div>
                 <h4 class="font-bold text-lg mb-4">ABOUT</h4>
                 <ul class="space-y-2 text-sm">
                     <li><a href="#" class="text-blue-200 hover:text-white">Our Story</a></li>
+                    <li><a href="#" class="text-blue-200 hover:text-white">Careers</a></li>
+                    <li><a href="#" class="text-blue-200 hover:text-white">Sustainability</a></li>
                     <li><a href="#" class="text-blue-200 hover:text-white">Contact Us</a></li>
                 </ul>
             </div>
@@ -326,6 +211,8 @@
                 <h4 class="font-bold text-lg mb-4">SUPPORT</h4>
                 <ul class="space-y-2 text-sm">
                     <li><a href="#" class="text-blue-200 hover:text-white">FAQ</a></li>
+                    <li><a href="#" class="text-blue-200 hover:text-white">Shipping & Returns</a></li>
+                    <li><a href="#" class="text-blue-200 hover:text-white">Size Guide</a></li>
                     <li><a href="#" class="text-blue-200 hover:text-white">Privacy Policy</a></li>
                 </ul>
             </div>
